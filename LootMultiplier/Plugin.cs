@@ -29,10 +29,10 @@ namespace LootMultiplier
                                     true, 
                                     "Enable loot multiplier.");
 
-            AlwaysMultiply = Config.Bind("Always Multiply",
-                                    "Always multiply the loot by the multiplier amount. If false, loot is randomly multiplied between x1 and the value set in the multiplier",
+            AlwaysMultiply = Config.Bind("Loot Multiplier",
+                                    "Always multiply loot",
                                     false,
-                                    "Always multiplies the loot by the configured amount.");
+                                    "Always multiply the loot by the configured amount.\nIf false, loot is randomly multiplied between x1 and the value set in the multiplier");
 
             LootMultiplier = Config.Bind("Loot Multiplier",
                                          "Loot Multiplier", 
