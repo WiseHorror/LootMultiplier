@@ -14,13 +14,13 @@ namespace LootMultiplier
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(BattleCalculator), nameof(BattleCalculator.Calculator))]
-        public static void BattleCalculator_Calculator_Postfix(CharacterType characterType, PlayerCharacter player, Object obj)
+        public static void BattleCalculator_Calculator_Postfix(CharacterType typeC, PlayerCharacter player, Object obj)
         {
             if (!Plugin.EnableMod.Value) return;
             if (hitObjects.Contains(obj.GetInstanceID())) return;
             hitObjects.Add(obj.GetInstanceID());
 
-            if (characterType == CharacterType.ENEMY)
+            if (typeC == CharacterType.ENEMY)
             {
                 var enemy = (Enemy)obj;
 
@@ -39,7 +39,7 @@ namespace LootMultiplier
                     enemy.loots[key] = randomValue;
                 }
             }
-            if (characterType == CharacterType.RESOURCES)
+            if (typeC == CharacterType.RESOURCES)
             {
                 var resource = (ResourcesObject)obj;
 
