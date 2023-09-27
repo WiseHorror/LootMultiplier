@@ -5,6 +5,7 @@
 
 #libs
 libs/
+LootMultiplier/libs/
 
 # User-specific files
 *.rsuser
